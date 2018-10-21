@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class='classify-bar'>
+  
+</view>
+<view class='first-block'>
+  <image class='first-image' src='/images/1.jpg'></image>
+  <view class='first-title'>外媒称香港回归15年打破“经济将死”预言哈哈哈哈哈哈哈哈哈</view>
+  <view class='about-news'>
+    <view class='news-from'>中国新闻网</view>
+    <view class='news-time'>09:34</view>
+  </view>
+</view>
+<view class='other-news'>
+  <view class='news-block' wx:for="[1]">
+    <view class='word-block'>
+      <view class='news-title'>外媒称香港回归15年打破“经济将死”预言哈哈哈哈哈哈</view>
+      <view class='about-block'>
+        <view class='tipnews-from'>中国新闻网</view>
+        <view class='tipnews-time'>09:34</view>
+      </view>
+    </view>
+    <image class='image-tips' src='/images/1.jpg'></image>
+  </view>
+</view>
