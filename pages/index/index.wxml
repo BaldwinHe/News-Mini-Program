@@ -2,8 +2,9 @@
 <view class='classify-bar'>
   
 </view>
-<view class='first-block'>
+<view class='first-block' bindtap='getNewsDetail'>
   <image class='first-image' src='/images/1.jpg'></image>
+  <image class='background-image' src='/images/bg-image.jpg'></image>
   <view class='first-title'>外媒称香港回归15年打破“经济将死”预言哈哈哈哈哈哈哈哈哈</view>
   <view class='about-news'>
     <view class='news-from'>中国新闻网</view>
@@ -11,7 +12,7 @@
   </view>
 </view>
 <view class='other-news'>
-  <view class='news-block' wx:for="[1]">
+  <view class='news-block' wx:for="[1]" bindtap='getNewsDetail'>
     <view class='word-block'>
       <view class='news-title'>外媒称香港回归15年打破“经济将死”预言哈哈哈哈哈哈</view>
       <view class='about-block'>

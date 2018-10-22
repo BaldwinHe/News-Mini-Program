@@ -1,0 +1,49 @@
+.detail-block {
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  margin-top: 35rpx;
+}
+
+.detail-title {
+  font-size: 48rpx;
+  line-height: 67rpx;
+  margin-bottom: 20rpx;
+}
+
+.detail-about {
+  display: flex;
+  align-items: center;
+  font-size: 27rpx;
+  line-height: 38rpx;
+  opacity: 0.3;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+
+.detail-read {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.detail-image {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  margin-bottom: 20rpx;
+}
+.image{
+  width: 700rpx;
+}
+
+.image-title {
+  height: 30rpx;
+  opacity: 0.5;
+}
+
+.body {
+  font-size: 35rpx;
+  line-height: 55rpx;
+  opacity: 0.8;
+}

@@ -7,9 +7,14 @@
   top: 60rpx;
   width: 750rpx;
   height: 500rpx;
-  background-color: rgb(229, 229, 229)
+  //background-color: rgb(229, 229, 229)
 }
 
+.background-image {
+  position: absolute;
+  width: 750rpx;
+  height: 500rpx;
+}
 .first-image {
   position: absolute;
   width: 700rpx;
@@ -68,6 +73,7 @@
   line-height: 38rpx;
   opacity: 0.4;
   font-weight: 700;
+  margin-top: 10rpx
 }
 
 .tipnews-from {
