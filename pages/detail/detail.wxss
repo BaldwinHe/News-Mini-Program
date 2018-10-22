@@ -19,7 +19,13 @@
   font-weight: 700;
   margin-bottom: 20rpx;
 }
-
+.detail-from-time {
+  display: flex;
+}
+.detail-from {
+  margin-right: 30rpx;
+  width: 150rpx;
+}
 .detail-read {
   flex-grow: 1;
   text-align: right;

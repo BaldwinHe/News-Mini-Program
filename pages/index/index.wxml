@@ -2,24 +2,24 @@
 <view class='classify-bar'>
   
 </view>
-<view class='first-block' bindtap='getNewsDetail'>
-  <image class='first-image' src='/images/1.jpg'></image>
+<view class='first-block' bindtap='getNewsDetail' data-id="{{firstID}}">
+  <image class='first-image' src='{{firstImage}}'></image>
   <image class='background-image' src='/images/bg-image.jpg'></image>
-  <view class='first-title'>外媒称香港回归15年打破“经济将死”预言哈哈哈哈哈哈哈哈哈</view>
+  <view class='first-title'>{{firstTitle}}</view>
   <view class='about-news'>
-    <view class='news-from'>中国新闻网</view>
-    <view class='news-time'>09:34</view>
+    <view class='news-from'>{{firstFrom}}</view>
+    <view class='news-time'>{{firstDate}}</view>
   </view>
 </view>
 <view class='other-news'>
-  <view class='news-block' wx:for="[1]" bindtap='getNewsDetail'>
+  <view class='news-block' wx:for="{{listNews}}" bindtap='getNewsDetail' data-id="{{item.id}}">
     <view class='word-block'>
-      <view class='news-title'>外媒称香港回归15年打破“经济将死”预言哈哈哈哈哈哈</view>
+      <view class='news-title'>{{item.title}}</view>
       <view class='about-block'>
-        <view class='tipnews-from'>中国新闻网</view>
-        <view class='tipnews-time'>09:34</view>
+        <view class='tipnews-from'>{{item.from}}</view>
+        <view class='tipnews-time'>{{item.date}}</view>
       </view>
     </view>
-    <image class='image-tips' src='/images/1.jpg'></image>
+    <image class='image-tips' src='{{item.image}}'></image>
   </view>
 </view>

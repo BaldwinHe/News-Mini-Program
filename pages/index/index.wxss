@@ -50,6 +50,7 @@
 
 .news-from {
   margin-right: 30rpx;
+  width: 120rpx;
 }
 
 .news-block {
