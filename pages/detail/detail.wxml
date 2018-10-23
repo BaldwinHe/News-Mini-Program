@@ -8,9 +8,18 @@
     </view>
     <view class='detail-read'>{{read}}</view>
   </view>
-  <view class='detail-image'>
+  <view wx:if="{{haveDetail == 0}}" class='detail-image'>
     <image class='image' src='{{imagePath}}'></image>
     <view class='image-title'>{{imageFrom}}</view>
   </view>
-  <view class='body'>{{content}}</view>
+  <view class='body'>
+    <view wx:for="{{content}}" >
+      <text wx:if="{{item.type == 1}}" class='body-word' space='emsp'>  {{item.answer}}</text>
+      <text wx:if="{{item.type == 2}}" class='body-strong-word' space='emsp'>  {{item.answer}}</text>
+      <view class='detail-image' wx:if="{{item.type == 0}}">
+        <image class='image' src='{{item.answer}}'></image>
+        <view class='image-title'>{{item.from}}</view>
+      </view>  
+    </view>
+  </view>
 </view>

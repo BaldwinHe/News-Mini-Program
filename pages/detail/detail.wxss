@@ -2,6 +2,7 @@
   margin-left: 25rpx;
   margin-right: 25rpx;
   margin-top: 35rpx;
+  align-items: center;
 }
 
 .detail-title {
@@ -24,7 +25,7 @@
 }
 .detail-from {
   margin-right: 30rpx;
-  width: 150rpx;
+  width: 200rpx;
 }
 .detail-read {
   flex-grow: 1;
@@ -37,19 +38,28 @@
   text-align: center;
   font-size: 30rpx;
   line-height: 42rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
 }
 .image{
   width: 700rpx;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-title {
-  height: 30rpx;
   opacity: 0.5;
 }
 
 .body {
   font-size: 35rpx;
   line-height: 55rpx;
+}
+
+.body-strong-word {
+  opacity: 0.8;
+  font-weight: 700;
+}
+
+.body-word {
   opacity: 0.8;
 }

@@ -10,8 +10,9 @@ Page({
     from:"中国新闻网",
     date:"09:34",
     read:"",
-    content:"",
-    imagePath:""
+    content:[],
+    imagePath:"",
+    haveDetail:1
   },
 
   /**
@@ -43,12 +44,46 @@ Page({
     if (result.source == "") result.source = "未知来源";
     if (result.date == "") result.date = "未知时间";
     else result.date = result.date.substring(11, 16);
+    let newsContent = [], content = result.content,haveDetail = 1;
+    console.log(content);
+    if(content.length == 0) haveDetail = 0;
+    for (let i = 0; i < content.length;i++){
+      let oneContent = content[i];
+      if(oneContent.type=="image"){
+        let theTitle = "";
+        if (i + 1 < content.length && content[i + 1].type != "image" && content[i+1].text.length <= 25){
+          theTitle = content[i + 1].text;
+          i = i + 1;
+        }
+        newsContent.push({
+          type: 0,
+          answer: oneContent.src,
+          from: theTitle
+        })
+      }
+      if (oneContent.type == "p") {
+        newsContent.push({
+          type: 1,
+          answer:  oneContent.text,
+          from: ""
+        })
+      }
+      if (oneContent.type == "strong") {
+        newsContent.push({
+          type: 2,
+          answer: oneContent.text,
+          from: ""
+        })
+      }
+    }
     this.setData({
+      content:newsContent,
       title:result.title,
       read: "阅读数 : " + result.readCount,
       imagePath:result.firstImage,
       date:result.date,
-      from:result.source
+      from:result.source,
+      haveDetail:haveDetail
     })
   },
   /**

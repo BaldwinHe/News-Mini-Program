@@ -1,6 +1,8 @@
 <!--index.wxml-->
 <view class='classify-bar'>
-  
+  <view class='news-type' wx:for="" bindtap='selectType'>
+    <view class='one-type'>{{item}}</view>
+  </view>
 </view>
 <view class='first-block' bindtap='getNewsDetail' data-id="{{firstID}}">
   <image class='first-image' src='{{firstImage}}'></image>
