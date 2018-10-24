@@ -11,13 +11,13 @@ const typeMap = {
   "其他": "other"
 }
 const typeID = {
-  "国内": 0,
-  "国际": 1,
-  "财经": 2,
-  "娱乐": 3,
-  "军事": 4,
-  "体育": 5,
-  "其他": 6
+  "gn": 0,
+  "gj": 1,
+  "cj": 2,
+  "yl": 3,
+  "js": 4,
+  "ty": 5,
+  "other": 6
 }
 const typeName = ["国内", "国际", "财经", "娱乐", "军事", "体育", "其他"]; 
 Page({
@@ -48,10 +48,11 @@ Page({
     }
     this.setData({
       newsType: newsList,
-      navH: App.globalData.navHeight
+      navH: App.globalData.navHeight,
+      type: App.globalData.typeBefore,
+      theSelectType: typeID[App.globalData.typeBefore]
     })
-    console.log("Hello")
-    console.log(this.data.navH)
+    console.log(App.globalData.typeBefore)
     this.getNews();
   },
   getNews(callback){
@@ -108,6 +109,7 @@ Page({
     let ans = event.currentTarget.dataset.id
     let theType = typeMap[ans.name];
     let theID = ans.id;
+    App.globalData.typeBefore = theType;
     this.setData({
       type: theType,
       theSelectType: theID
