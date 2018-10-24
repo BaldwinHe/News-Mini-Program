@@ -1,4 +1,5 @@
 // pages/detail/detail.js
+const App = getApp();
 Page({
 
   /**
@@ -12,7 +13,9 @@ Page({
     read:"",
     content:[],
     imagePath:"",
-    haveDetail:1
+    haveDetail:1,
+    navH: 0,
+    pageID:1
   },
 
   /**
@@ -20,7 +23,8 @@ Page({
    */
   onLoad(options) {
     this.setData({
-      id : options.id
+      id : options.id,
+      navH: App.globalData.navHeight
     })
     this.getDetail()
   },
@@ -84,6 +88,11 @@ Page({
       date:result.date,
       from:result.source,
       haveDetail:haveDetail
+    })
+  },
+  navBack(){
+    wx.navigateTo({
+      url: '/pages/index/index',
     })
   },
   /**

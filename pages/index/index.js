@@ -50,6 +50,7 @@ Page({
       newsType: newsList,
       navH: App.globalData.navHeight
     })
+    console.log("Hello")
     console.log(this.data.navH)
     this.getNews();
   },
