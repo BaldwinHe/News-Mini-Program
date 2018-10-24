@@ -1,7 +1,8 @@
 <!--index.wxml-->
-<view class='classify-bar'>
-  <view class='news-type' wx:for="" bindtap='selectType'>
-    <view class='one-type'>{{item}}</view>
+<view class='classify-bar'> 
+  <view class='news-type' wx:for="{{newsType}}" bindtap='selectType' data-id="{{item}}"> 
+    <view wx:if="{{item.id != theSelectType}}" class='one-type'>{{item.name}}</view> 
+    <view wx:if="{{item.id == theSelectType}}" class='select-type'>{{item.name}}</view> 
   </view>
 </view>
 <view class='first-block' bindtap='getNewsDetail' data-id="{{firstID}}">

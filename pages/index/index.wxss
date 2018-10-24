@@ -1,7 +1,8 @@
 .classify-bar {
   width: 750rpx;
   height: 60rpx;
-  background-color: rgb(180, 149, 214)
+  background-color: rgb(180, 149, 214);
+  display: flex;
 }
 .first-block {
   top: 60rpx;
@@ -24,7 +25,7 @@
   z-index: 1;
 }
 .first-title {
-  position: absolute;
+  position: relative;
   color: white;
   font-size: 35rpx;
   line-height: 49rpx;
@@ -32,13 +33,13 @@
   margin-left: 50rpx;
   margin-right: 50rpx;
   margin-bottom: 15rpx;
-  top: 390rpx;
+  top: 330rpx;
   z-index: 1;
 }
 .about-news {
   color: whitesmoke;
-  top: 480rpx;
-  position: absolute;
+  top: 315rpx;
+  position: relative;
   display: flex;
   font-size: 27rpx;
   line-height: 38rpx;
@@ -89,4 +90,28 @@
 
 .word-block {
   margin-right: 30rpx;
+}
+
+.one-type { 
+  width: 107rpx; 
+  align-items: center; 
+  display: flex; 
+  flex-direction: column; 
+  flex-shrink: 0; 
+  color: whitesmoke; 
+  font-size: 35rpx; 
+  font-weight: 400; 
+} 
+ 
+.select-type { 
+  width: 107rpx; 
+  align-items: center; 
+  display: flex; 
+  flex-direction: column; 
+  flex-shrink: 0; 
+  color: whitesmoke; 
+  font-size: 35rpx; 
+  font-weight: 700; 
+  background-color: blue;
+  border-radius: 20rpx;
 }

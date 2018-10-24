@@ -5,9 +5,10 @@
     "pages/detail/detail"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dack",
     "navigationBarBackgroundColor": "#B495D6",
     "navigationBarTitleText": "Breaking News !",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   }
 }
