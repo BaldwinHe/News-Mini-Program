@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+const App = getApp();
 const typeMap = {
   "国内": "gn",
   "国际": "gj",
@@ -29,14 +30,15 @@ Page({
     listNews: [],
     firstID:0,
     newsType: "",
-    theSelectType: 0
+    theSelectType: 0,
+    navH: 0
   },
   onPullDownRefresh(){
     this.getNews(() => {
       wx.stopPullDownRefresh()
     })
   },
-  onLoad(){
+  onLoad: function (options) {
     let newsList = [];
     for (let k = 0; k <= 6; k++) {
       newsList.push({
@@ -45,8 +47,10 @@ Page({
       })
     }
     this.setData({
-      newsType: newsList
+      newsType: newsList,
+      navH: App.globalData.navHeight
     })
+    console.log(this.data.navH)
     this.getNews();
   },
   getNews(callback){

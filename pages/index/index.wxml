@@ -1,28 +1,40 @@
 <!--index.wxml-->
-<view class='classify-bar'> 
-  <view class='news-type' wx:for="{{newsType}}" bindtap='selectType' data-id="{{item}}"> 
-    <view wx:if="{{item.id != theSelectType}}" class='one-type'>{{item.name}}</view> 
-    <view wx:if="{{item.id == theSelectType}}" class='select-type'>{{item.name}}</view> 
-  </view>
-</view>
-<view class='first-block' bindtap='getNewsDetail' data-id="{{firstID}}">
-  <image class='first-image' src='{{firstImage}}'></image>
-  <image class='background-image' src='/images/bg-image.jpg'></image>
-  <view class='first-title'>{{firstTitle}}</view>
-  <view class='about-news'>
-    <view class='news-from'>{{firstFrom}}</view>
-    <view class='news-time'>{{firstDate}}</view>
-  </view>
-</view>
-<view class='other-news'>
-  <view class='news-block' wx:for="{{listNews}}" bindtap='getNewsDetail' data-id="{{item.id}}">
-    <view class='word-block'>
-      <view class='news-title'>{{item.title}}</view>
-      <view class='about-block'>
-        <view class='tipnews-from'>{{item.from}}</view>
-        <view class='tipnews-time'>{{item.date}}</view>
-      </view>
+<view>
+  <view class='nav bg-white' style='height:{{navH}}px'>
+    <view class='nav-title'>
+      震惊??!!!!
+      <image src='/images/news-icon.png' mode='aspectFit' class='newsIcon'></image>
     </view>
-    <image class='image-tips' src='{{item.image}}'></image>
   </view>
+  <scroll-view class='bg-gray overflow' style='height:calc(100vh - {{navH}}px)' scroll-y >
+      <view class='hidden'>  
+        <view class='classify-bar'> 
+          <view class='news-type' wx:for="{{newsType}}" bindtap='selectType' data-id="{{item}}"> 
+            <view wx:if="{{item.id != theSelectType}}" class='one-type'>{{item.name}}</view> 
+            <view wx:if="{{item.id == theSelectType}}" class='select-type'>{{item.name}}</view> 
+          </view>
+        </view>
+        <view class='first-block' bindtap='getNewsDetail' data-id="{{firstID}}">
+          <image class='first-image' src='{{firstImage}}'></image>
+          <image class='background-image' src='/images/bg-image.jpg'></image>
+          <view class='first-title'>{{firstTitle}}</view>
+          <view class='about-news'>
+            <view class='news-from'>{{firstFrom}}</view>
+            <view class='news-time'>{{firstDate}}</view>
+          </view>
+        </view>
+        <view class='other-news'>
+          <view class='news-block' wx:for="{{listNews}}" bindtap='getNewsDetail' data-id="{{item.id}}">
+            <view class='word-block'>
+              <view class='news-title'>{{item.title}}</view>
+              <view class='about-block'>
+                <view class='tipnews-from'>{{item.from}}</view>
+                <view class='tipnews-time'>{{item.date}}</view>
+              </view>
+            </view>
+            <image class='image-tips' src='{{item.image}}'></image>
+          </view>
+        </view>
+      </view>
+  </scroll-view>
 </view>

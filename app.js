@@ -10,6 +10,14 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.getSystemInfo({
+          success: res => {
+            //导航高度
+            this.globalData.navHeight = res.statusBarHeight + 46;
+          }, fail(err) {
+            console.log(err);
+          }
+        })
       }
     })
     // 获取用户信息
@@ -34,6 +42,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    navHeight:1
   }
 })
