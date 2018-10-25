@@ -31,7 +31,7 @@ Page({
     firstID:0,
     newsType: "",
     theSelectType: 0,
-    navH: 0
+    navH: App.globalData.navHeight
   },
   onPullDownRefresh(){
     this.getNews(() => {
@@ -52,7 +52,6 @@ Page({
       type: App.globalData.typeBefore,
       theSelectType: typeID[App.globalData.typeBefore]
     })
-    console.log(App.globalData.typeBefore)
     this.getNews();
   },
   getNews(callback){
