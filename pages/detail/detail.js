@@ -14,8 +14,7 @@ Page({
     content:[],
     imagePath:"",
     haveDetail:1,
-    navH: 0,
-    pageID:1
+    navH: App.globalData.navHeight
   },
 
   /**
@@ -48,14 +47,12 @@ Page({
     if (result.source == "") result.source = "未知来源";
     if (result.date == "") result.date = "未知时间";
     else result.date = result.date.substring(11, 16);
-    let newsContent = [], content = result.content,haveDetail = 1;
-    console.log(content);
-    if(content.length == 0) haveDetail = 0;
+    if(content.length == 0) haveDetail = 0;//新闻是否有细节
     for (let i = 0; i < content.length;i++){
       let oneContent = content[i];
       if(oneContent.type=="image"){
-        let theTitle = "";
-        if (i + 1 < content.length && content[i + 1].type != "image" && content[i+1].text.length <= 25){
+        let theTitle = ""; //图片的来源
+        if (i + 1 < content.length && content[i + 1].type != "image" && content[i+1].text.length <= 25){ //图片是不是有来源,我不知道怎么判断,所以就当图片的后面一句话如果字符数不大于25就认定为标题
           theTitle = content[i + 1].text;
           i = i + 1;
         }

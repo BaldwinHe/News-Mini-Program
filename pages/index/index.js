@@ -23,15 +23,15 @@ const typeName = ["国内", "国际", "财经", "娱乐", "军事", "体育", "�
 Page({
   data:{
     type: "gn",
-    firstImage: "/images/Unknown.jpg",
+    firstImage: "/images/Unknown.jpg", //没网时候的默认图片
     firstTitle:"请检查网络连接",
     firstFrom:"Unknown",
     firstDate:"",
-    listNews: [],
+    listNews: [], //新闻的Type
     firstID:0,
     newsType: "",
-    theSelectType: 0,
-    navH: App.globalData.navHeight
+    theSelectType: 0, 
+    navH: App.globalData.navHeight //自定义导航栏
   },
   onPullDownRefresh(){
     this.getNews(() => {
@@ -40,7 +40,7 @@ Page({
   },
   onLoad: function (options) {
     let newsList = [];
-    for (let k = 0; k <= 6; k++) {
+    for (let k = 0; k <= 6; k++) { //把分类整出来
       newsList.push({
         name: typeName[k],
         id: k
@@ -49,7 +49,7 @@ Page({
     this.setData({
       newsType: newsList,
       navH: App.globalData.navHeight,
-      type: App.globalData.typeBefore,
+      type: App.globalData.typeBefore, //从新闻细节返回时能返回之前点进去的父页面
       theSelectType: typeID[App.globalData.typeBefore]
     })
     this.getNews();
@@ -62,7 +62,7 @@ Page({
       },
       success: res=> {
         let result = res.data.result;
-        this.setFirst(result[0]);
+        this.setFirst(result[0]); //设置第一个大新闻
         this.setList(result.slice(1));
       },
       complete: ()=> {
@@ -71,9 +71,9 @@ Page({
     })
   },
   setFirst(result){
-    if(result.source == "") result.source = "未知来源";
-    if(result.date == "") result.date = "未知时间";
-    else result.date = result.date.substring(11,16);
+    if(result.source == "") result.source = "未知来源"; //什么东西都没有时的默认值
+    if (result.date == "") result.date = "未知时间"; //什么东西都没有时的默认值
+    else result.date = result.date.substring(11,16); //选取部分的时间
     this.setData({
       firstImage:result.firstImage,
       firstTitle:result.title,
@@ -99,12 +99,12 @@ Page({
     this.setData({ listNews:listNews });
   },
   getNewsDetail :function(event){
-    let ID = event.currentTarget.dataset.id;
+    let ID = event.currentTarget.dataset.id; //把当前所选的新闻交给下一个页面
     wx.navigateTo({
       url: '/pages/detail/detail?id=' + ID,
     })
   },
-  selectType: function (event) {
+  selectType: function (event) { //切换选择的新闻类别
     let ans = event.currentTarget.dataset.id
     let theType = typeMap[ans.name];
     let theID = ans.id;

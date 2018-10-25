@@ -15,7 +15,7 @@
   bottom: 0;
   left: 0;
   z-index: 10;
-  font-family:PingFang-SC-Medium;
+  /*font-family:PingFang-SC-Medium;*/
   font-size:33rpx;
   letter-spacing:1px;
 }
@@ -49,6 +49,7 @@
   display: flex;
   padding-top: 13rpx;
 }
+
 .first-block {
   top: 60rpx;
   width: 750rpx;
@@ -60,6 +61,7 @@
   width: 750rpx;
   height: 500rpx;
 }
+
 .first-image {
   position: absolute;
   width: 700rpx;
@@ -68,6 +70,7 @@
   margin-top: 30rpx;
   z-index: 1;
 }
+
 .first-title {
   position: relative;
   color: rgb(249, 39, 39);
@@ -80,6 +83,7 @@
   top: 330rpx;
   z-index: 1;
 }
+
 .about-news {
   color: rgb(247, 76, 76);
   top: 315rpx;
@@ -136,7 +140,8 @@
   margin-right: 30rpx;
 }
 
-.one-type { 
+/* 所选择 新闻Type 的特指 */
+.one-type {  
   width: 107rpx; 
   align-items: center; 
   display: flex; 
@@ -147,7 +152,8 @@
   font-weight: 400; 
 } 
  
-.select-type { 
+/* 所选择 新闻Type 的特指 */
+.select-type {  
   width: 107rpx; 
   align-items: center; 
   display: flex; 
