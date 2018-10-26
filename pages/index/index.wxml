@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<!-- 导航栏自定义学习自 -> https://www.jianshu.com/p/5753a0e1754f -->
 <view>
   <view class='nav bg-white' style='height:{{navH}}px'>
     <view class='nav-title'>

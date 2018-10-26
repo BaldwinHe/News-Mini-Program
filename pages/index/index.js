@@ -24,9 +24,9 @@ Page({
   data:{
     type: "gn",
     firstImage: "/images/Unknown.jpg", //没网时候的默认图片
-    firstTitle:"请检查网络连接",
+    firstTitle:"哈哈哈哈请检查网络连接",
     firstFrom:"Unknown",
-    firstDate:"",
+    firstDate:"没网我什么也不知道",
     listNews: [], //新闻的Type
     firstID:0,
     newsType: "",
@@ -65,6 +65,9 @@ Page({
         this.setFirst(result[0]); //设置第一个大新闻
         this.setList(result.slice(1));
       },
+      fail: err=>{
+        console.log(err);
+      },
       complete: ()=> {
         callback && callback()
       }
@@ -73,7 +76,7 @@ Page({
   setFirst(result){
     if(result.source == "") result.source = "未知来源"; //什么东西都没有时的默认值
     if (result.date == "") result.date = "未知时间"; //什么东西都没有时的默认值
-    else result.date = result.date.substring(11,16); //选取部分的时间
+    else result.date = result.date.substring(5, 10) + " "+ result.date.substring(11,16); //选取部分的时间
     this.setData({
       firstImage:result.firstImage,
       firstTitle:result.title,
@@ -87,7 +90,7 @@ Page({
     for(let i = 0;i<result.length;i++){
       if (result[i].source == "") result[i].source = "未知来源";
       if (result[i].date == "") result[i].date = "未知时间";
-      else result[i].date = result[i].date.substring(11, 16);
+      else result[i].date = result[i].date.substring(5, 10) + " " + result[i].date.substring(11, 16);
       listNews.push({
         title: result[i].title,
         from: result[i].source,

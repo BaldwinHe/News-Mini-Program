@@ -46,7 +46,10 @@ Page({
   showDetail(result){
     if (result.source == "") result.source = "未知来源";
     if (result.date == "") result.date = "未知时间";
-    else result.date = result.date.substring(11, 16);
+    else result.date = result.date.substring(5, 10) + " " + result.date.substring(11, 16); //选取部分的时间
+    let content = result.content;
+    let haveDetail = 1;
+    let newsContent = [];
     if(content.length == 0) haveDetail = 0;//新闻是否有细节
     for (let i = 0; i < content.length;i++){
       let oneContent = content[i];

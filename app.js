@@ -43,7 +43,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    navHeight:1,
+    navHeight:60,
     typeBefore:"gn"
   }
 })
